@@ -1,0 +1,105 @@
+question,ground_truth
+What is the sample space in probability theory?,The sample space is the set of all possible outcomes of an experiment.
+What is an event in probability?,An event is a subset of the sample space consisting of one or more possible outcomes.
+What are the four basic axioms of probability?,The four axioms are: probabilities are non-negative the probability of the sample space equals one if one event is a subset of another then its probability is less than or equal to that of the larger event  and the probability of the union of two events equals the sum of their probabilities minus the probability of their intersection.
+Why must the probabilities assigned to all possible outcomes sum to one?,Because the sample space contains every possible outcome of the experiment making its total probability equal to one.
+What is meant by the complement of an event?,The complement of an event consists of all outcomes in the sample space that are not part of the original event.
+What does the inclusion-exclusion principle state?,The probability of the union of two events equals the sum of their individual probabilities minus the probability of their intersection.
+Why is the probability of the intersection subtracted in the inclusion-exclusion principle?,Because outcomes belonging to both events would otherwise be counted twice when adding their probabilities.
+How is probability used in a classification problem?,A classifier predicts a probability distribution over all possible classes and selects the class with the highest probability.
+Why should the output probabilities of a neural network classifier sum to one?,Because the outputs represent a valid probability distribution over all possible classes.
+What is conditional probability?,Conditional probability is the probability of an event occurring given that certain information or another event is already known.
+How does observing new information affect probability?,New information changes the probability distribution by restricting attention to the universe in which the observed information is true.
+How can the probability assigned by an MNIST classifier be interpreted?,It represents the probability that the input image belongs to a particular digit class given the observed pixel values.
+What does P(0|input) represent in an image classifier?,It represents the probability that the input image depicts the digit zero given its pixel values.
+What is meant by independence between two events?,Two events are independent if knowing that one occurred does not change the probability of the other occurring.
+Why is independence considered a symmetric property?,Because if the occurrence of one event does not affect the probability of the other the reverse relationship also holds.
+How can the probability of the intersection of two events be expressed using conditional probability?,It equals the conditional probability of one event given the other multiplied by the probability of the conditioning event.
+How does the multiplication rule simplify when two events are independent?,The probability of their intersection becomes the product of their individual probabilities.
+What is a random variable?,A random variable is a function that maps outcomes in the sample space to values in another space such as integers or real numbers.
+Why are random variables important in machine learning?,They provide mathematical representations of uncertain quantities that can be analyzed using probability distributions and statistical measures.
+How is dropout related to random variables?,Each neuron in a dropout layer can be modeled as a binary random variable indicating whether that neuron is kept or masked during training.
+question,ground_truth
+What is the expectation of a random variable?,The expectation of a random variable is its probability-weighted average value over all possible outcomes.
+Why is expectation referred to as a weighted average?,Because each possible value contributes to the average according to its probability of occurring.
+What does the variance of a random variable measure?,Variance measures how much the values of a random variable tend to deviate from their expected value.
+Why are both expectation and variance important in machine learning?,Expectation describes the average behavior of a random variable while variance quantifies the uncertainty or spread around that average.
+How is the expectation of a discrete random variable computed?,It is computed by multiplying each possible value by its probability and summing over all possible values.
+What does a high variance indicate about a random variable?,A high variance indicates that the values are widely spread around the expected value.
+What does a low variance indicate?,A low variance indicates that most values lie close to the expected value.
+Why is variance always non-negative?,Because it is computed from squared deviations from the mean which cannot be negative.
+What is a probability distribution?,A probability distribution assigns probabilities to all possible values of a random variable while satisfying the probability axioms.
+What characterizes a valid probability distribution?,All probabilities are non-negative and their total sum equals one.
+What is a Bernoulli random variable?,A Bernoulli random variable has only two possible outcomes typically represented as success and failure.
+How is a Bernoulli random variable commonly used in deep learning?,It is used to model binary events such as whether a neuron is dropped during dropout or whether a binary classification prediction is correct.
+What is a Binomial distribution?,A Binomial distribution models the total number of successes obtained in a fixed number of independent Bernoulli trials.
+What assumptions are required for a Binomial distribution?,Each trial must be independent have only two outcomes and use the same probability of success.
+What does a Gaussian distribution represent?,A Gaussian distribution models continuous variables whose values cluster around a mean with symmetric variation.
+Why is the Gaussian distribution important in machine learning?,Many natural phenomena and noise processes approximately follow a Gaussian distribution making it widely useful for modeling uncertainty.
+What is meant by the likelihood of observed data?,Likelihood measures how well a particular model or parameter setting explains the observed data.
+How is likelihood different from probability?,Probability measures the chance of observing data given a model whereas likelihood treats the observed data as fixed and evaluates different model parameters.
+Why is maximizing likelihood a common objective in machine learning?,Because it identifies model parameters that make the observed training data most probable.
+What is Bayes' theorem used for?,Bayes' theorem updates prior beliefs about an event or hypothesis using newly observed evidence.
+question,ground_truth
+What is a vector?,A vector is an ordered collection of numerical values that represents a point or direction in a multidimensional space.
+What is a matrix?,A matrix is a rectangular arrangement of numbers organized into rows and columns.
+Why are vectors important in deep learning?,Vectors are used to represent data samples features parameters embeddings and activations throughout neural networks.
+Why are matrices fundamental to neural networks?,Matrices efficiently represent collections of vectors and enable batch computations through matrix multiplication.
+What is matrix multiplication?,Matrix multiplication is an operation that combines two compatible matrices by computing dot products between rows of the first matrix and columns of the second matrix.
+When can two matrices be multiplied?,Two matrices can be multiplied when the number of columns in the first matrix equals the number of rows in the second matrix.
+What is the dot product of two vectors?,The dot product is the sum of the products of corresponding elements of two vectors and measures their similarity or alignment.
+How is the dot product used in neural networks?,The dot product combines input features with learned weights to compute neuron activations.
+What is the Euclidean norm of a vector?,The Euclidean norm is the length or magnitude of a vector computed as the square root of the sum of the squared elements.
+Why are vector norms useful in machine learning?,Norms measure the size of vectors and are commonly used in optimization regularization and distance calculations.
+What is the L1 norm?,The L1 norm is the sum of the absolute values of a vector's elements.
+What is the L2 norm?,The L2 norm is the square root of the sum of the squared elements of a vector.
+How do the L1 and L2 norms differ?,The L1 norm sums absolute values and often promotes sparsity while the L2 norm measures Euclidean length and penalizes large values more strongly.
+What is the transpose of a matrix?,The transpose of a matrix is obtained by exchanging its rows and columns.
+Why is the transpose operation frequently used in deep learning?,It allows vectors and matrices to have compatible dimensions for matrix multiplication and other linear algebra operations.
+What is an identity matrix?,An identity matrix is a square matrix with ones on the main diagonal and zeros elsewhere that leaves vectors unchanged when multiplied.
+What is the inverse of a matrix?,The inverse of a matrix is another matrix that when multiplied with the original produces the identity matrix.
+Under what condition does a matrix have an inverse?,A matrix must be square and non-singular to possess an inverse.
+What is an eigenvector of a matrix?,An eigenvector is a nonzero vector whose direction remains unchanged when multiplied by a matrix changing only by a scaling factor.
+What is an eigenvalue?,An eigenvalue is the scalar by which an eigenvector is scaled after multiplication by its corresponding matrix.
+question,ground_truth
+Why is calculus important in deep learning?,Calculus provides the mathematical tools needed to compute gradients and optimize neural network parameters during training.
+What is a derivative?,A derivative measures the rate at which a function changes with respect to one of its variables.
+What does the gradient of a function represent?,The gradient is a vector containing the partial derivatives of a function with respect to all of its input variables and indicates the direction of greatest increase.
+What is a partial derivative?,A partial derivative measures how a multivariable function changes with respect to one variable while keeping the others constant.
+Why are partial derivatives important in neural networks?,They quantify how each model parameter influences the loss and are used to update parameters during training.
+What is the chain rule?,The chain rule computes the derivative of a composite function by multiplying the derivatives of its nested functions.
+Why is the chain rule fundamental to backpropagation?,Backpropagation relies on the chain rule to efficiently propagate gradients backward through every layer of a neural network.
+What is gradient descent?,Gradient descent is an optimization algorithm that minimizes a loss function by iteratively updating model parameters in the direction opposite the gradient.
+Why does gradient descent move in the negative gradient direction?,Because the negative gradient points in the direction of the steepest decrease of the objective function.
+What is the purpose of the learning rate in gradient descent?,The learning rate controls the size of each parameter update during optimization.
+What can happen if the learning rate is too large?,A learning rate that is too large can cause optimization to overshoot the minimum become unstable or fail to converge.
+What can happen if the learning rate is too small?,A learning rate that is too small results in very slow convergence and may require many iterations to reach a good solution.
+What is a loss function?,A loss function measures the difference between a model's predictions and the true target values.
+Why is minimizing the loss function the objective of training?,Because reducing the loss improves the agreement between model predictions and the observed training data.
+What is backpropagation?,Backpropagation is an algorithm that computes gradients efficiently by propagating errors backward through a neural network using the chain rule.
+Why is backpropagation computationally efficient?,It reuses intermediate computations when calculating gradients instead of computing each derivative independently.
+What role do gradients play in neural network training?,Gradients indicate how each parameter should be adjusted to reduce the loss function.
+Why are gradients computed for every trainable parameter?,Each parameter contributes differently to the loss and therefore requires its own update during optimization.
+What is stochastic gradient descent (SGD)?,Stochastic gradient descent updates model parameters using gradients computed from individual training examples or small mini-batches rather than the entire dataset.
+How does stochastic gradient descent differ from batch gradient descent?,Batch gradient descent computes gradients using the full training dataset whereas stochastic gradient descent uses one example or a small mini-batch for each update making training faster and more scalable.
+question,ground_truth
+What is overfitting in machine learning?,Overfitting occurs when a model learns the training data too closely including noise and irrelevant details resulting in poor performance on unseen data.
+What is underfitting?,Underfitting occurs when a model is too simple to capture the underlying patterns in the training data leading to poor performance on both training and test data.
+Why is generalization important in deep learning?,Generalization enables a trained model to perform well on previously unseen data rather than only memorizing the training examples.
+What is regularization?,Regularization consists of techniques that reduce overfitting by limiting model complexity or constraining parameter values during training.
+How does dropout help prevent overfitting?,Dropout randomly disables a subset of neurons during training reducing co-adaptation among neurons and improving generalization.
+Why is dropout only applied during training?,Dropout is used during training to improve robustness while all neurons are used during inference to utilize the model's full capacity.
+What is the purpose of mini-batch training?,Mini-batch training balances computational efficiency and stable gradient estimation by processing small groups of training examples at each optimization step.
+Why is data normalization beneficial for neural network training?,Normalization places input features on similar scales improving optimization stability and often accelerating convergence.
+Why can deep neural networks be difficult to optimize?,Deep networks involve many nonlinear transformations making optimization susceptible to issues such as vanishing gradients exploding gradients and complex loss landscapes.
+What is the vanishing gradient problem?,The vanishing gradient problem occurs when gradients become extremely small as they propagate backward through deep networks slowing or preventing effective learning.
+What is the exploding gradient problem?,The exploding gradient problem occurs when gradients grow excessively during backpropagation leading to unstable parameter updates.
+Why is parameter initialization important?,Proper parameter initialization improves optimization by preventing activations and gradients from becoming excessively large or small at the start of training.
+Why is selecting an appropriate learning rate important?,An appropriate learning rate enables efficient convergence while avoiding unstable updates or excessively slow training.
+How does increasing model capacity affect learning?,Greater model capacity enables learning more complex patterns but also increases the risk of overfitting if not properly regularized.
+Why is the objective function central to model training?,The objective function defines the optimization goal and guides parameter updates throughout the learning process.
+What is the capital city of France?,I don't know based on the provided document.
+Who invented the Python programming language?,I don't know based on the provided document.
+What is the release date of GPT-4?,I don't know based on the provided document.
+Which company developed ChatGPT?,I don't know based on the provided document.
+What is the population of India according to the 2021 census?,I don't know based on the provided document.

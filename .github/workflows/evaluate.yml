@@ -1,0 +1,78 @@
+name: RAG Evaluation Pipeline
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+  pull_request:
+    branches:
+      - main
+      - master
+
+jobs:
+  evaluate:
+
+    runs-on: self-hosted
+
+    timeout-minutes: 180
+
+    steps:
+
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Upgrade pip
+        run: |
+          python -m pip install --upgrade pip
+
+      - name: Install Dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Create .env
+        shell: bash
+        run: |
+          echo "MISTRAL_API_KEY=${{ secrets.MISTRAL_API_KEY }}" > .env
+
+      - name: Verify Python Environment
+        run: |
+          python --version
+          pip list
+
+      - name: Verify Project Imports
+        run: |
+          python -c "import retriever"
+          python -c "import reranker"
+          python -c "import citation_guard"
+          python -c "import rag_query"
+
+      - name: Run Offline Faithfulness Evaluation
+        run: |
+          python -m evaluation.evaluate
+
+      - name: Upload Evaluation Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: evaluation-report
+          path: |
+            evaluation/results/report.json
+            evaluation/results/predictions.csv
+
+      - name: Display Report
+        if: always()
+        shell: bash
+        run: |
+          if [ -f evaluation/results/report.json ]; then
+            echo "==============================="
+            echo "Evaluation Report"
+            echo "==============================="
+            cat evaluation/results/report.json
+          fi
