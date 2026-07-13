@@ -63,7 +63,7 @@ jobs:
         shell: powershell
         run: |
           "MISTRAL_API_KEY=${{ secrets.MISTRAL_API_KEY }}" | Out-File -FilePath .env -Encoding utf8
-
+  
       ######################################################
       # Verify imports
       ######################################################
