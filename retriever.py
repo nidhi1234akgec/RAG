@@ -1,5 +1,5 @@
-from pathlib import Path
 import os
+from pathlib import Path
 
 from dotenv import load_dotenv
 
@@ -17,6 +17,11 @@ from langchain_classic.retrievers import EnsembleRetriever
 load_dotenv()
 
 MISTRAL_API_KEY = os.getenv("MISTRAL_API_KEY")
+
+if not MISTRAL_API_KEY:
+    raise ValueError(
+        "MISTRAL_API_KEY not found in environment variables."
+    )
 
 BASE_DIR = Path(__file__).resolve().parent
 
@@ -46,7 +51,6 @@ chunks = RecursiveCharacterTextSplitter(
     chunk_overlap=100,
 ).split_documents(docs)
 
-# Add chunk number metadata
 for i, chunk in enumerate(chunks):
     chunk.metadata["chunk"] = i + 1
 
@@ -106,8 +110,8 @@ hybrid_retriever = EnsembleRetriever(
         faiss_retriever,
     ],
     weights=[
-        0.4,  # BM25
-        0.6,  # FAISS
+        0.4,
+        0.6,
     ],
 )
 
