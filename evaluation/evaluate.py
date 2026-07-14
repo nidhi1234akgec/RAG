@@ -7,9 +7,9 @@ from tqdm import tqdm
 from rag_query import ask
 from evaluation.judge import judge_answer
 
-# ------------------------------------------------------
+# -----------------------------------------------------
 # Paths
-# ------------------------------------------------------
+# -----------------------------------------------------
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
